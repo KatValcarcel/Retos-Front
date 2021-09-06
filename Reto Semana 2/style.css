@@ -35,7 +35,7 @@ fieldset {
 }
 
 .form3 {
-  background-color: rgb(215, 230, 243);
+  background-color: #e7f7ff;
 }
 
 ul {
@@ -116,7 +116,7 @@ input {
   background: rgb(30, 88, 128);
 }
 .reto3 {
-  background: rgb(28, 170, 226);
+  background: #63B5f7;
 }
 .reto3:hover {
   background: rgb(25, 148, 197);
