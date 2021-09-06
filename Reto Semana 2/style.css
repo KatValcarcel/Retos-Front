@@ -1,0 +1,107 @@
+body {
+  font-family: arial, sans;
+}
+
+.titulo1 {
+  text-align: center;
+  font-weight: 200;
+  color: rgb(1, 61, 46);
+  margin-top: 5em;
+}
+
+
+h4 {
+  color: dimgrey;
+  margin-top: 1em;
+  font-weight: 200;
+}
+
+.form1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+fieldset{
+    background-color: rgb(241, 241, 241);
+    padding: 2em;
+    margin-right: 70em;
+    margin-left: 2em;
+    margin-top: 5em;
+    border-style: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(3, 79, 141);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.active {
+  background-color: rgb(233, 172, 18);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(2, 61, 109);
+}
+
+input {
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 25rem;
+}
+
+.form2 input {
+    width: 20rem;
+    margin: 0;
+    margin-bottom: 1em;
+    margin-top: 2px;
+    padding: 0.5em 1em;
+}
+.form2 textarea{
+    width: 21.5rem;
+    height: 3rem;
+    margin-bottom: 1em;
+}
+
+.enviar input{
+  color: white;
+  font-size: 1em;
+  border: none;
+  margin-top: 1em;
+  width: 5em;
+}
+
+.reto1 {
+  background: rgb(3, 156, 85);
+  margin: 0 auto;
+  display: block;
+  width: auto;
+}
+.reto1:hover {
+  background: rgb(2, 122, 66);
+}
+
+.reto2 {
+  background: rgb(38, 114, 165);
+}
+.reto2:hover {
+  background: rgb(30, 88, 128);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Descripción" content="Reto semana 2" />
+    <meta name="Keywords" content="html5, aprendiendo, Arequipa" />
+    <title>Reto 2 - Semana 2</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div>
+      <header>
+        <div class="menu-bar">
+          <ul class="menu-list">
+              <li><a href="./Reto1.html">Reto 1!</a></li>
+              <li><a class="active" href="#">Reto 2!</a></li>
+              <li><a href="./Reto3.html">Reto 3!</a></li>
+          </ul>
+        </div>
+      </header>
+    </div>
+    <fieldset class="form2">  
+      <div>
+        <form action="">
+            <div>
+                <h1>Sign Up</h1>
+              </div>
+          <div>
+            <label>First Name</label></br>
+            <input type="text" name="nombre" minlength="6" required />
+          </div>
+          <div>
+            <label>Age</label></br>
+            <input type="number" name="number" min="1" max="120" required />
+          </div>
+          <div>
+            <label>Income</label></br>
+            <input type="text" minlength="6" required />
+          </div>
+          <div>
+            <label>More Info</label></br>
+            <textarea
+              required
+            ></textarea>
+          </div>
+          <div>
+            <label>Gender</label></br>
+            <div>
+                <input type="radio" id="huey" name="drone" value="huey"
+                       checked>
+                <label for="huey">Huey</label>
+            </div>
+            <div>
+                <input type="radio" id="dewey" name="drone" value="dewey">
+                <label for="dewey">Dewey</label>
+            </div>
+          <div class="enviar"><input class="reto2" type="submit"/></div>
+        </form>
+      </div>
+    </fielset>
+  </body>
+</html>
