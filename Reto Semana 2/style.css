@@ -9,7 +9,6 @@ body {
   margin-top: 5em;
 }
 
-
 h4 {
   color: dimgrey;
   margin-top: 1em;
@@ -21,13 +20,18 @@ h4 {
   justify-content: center;
   align-items: center;
 }
+
 fieldset{
-    background-color: rgb(241, 241, 241);
+  background-color: rgb(241, 241, 241);
     padding: 2em;
     margin-right: 70em;
     margin-left: 2em;
     margin-top: 5em;
     border-style: none;
+}
+
+fieldset.form3{
+  background-color: rgb(215, 230, 243);
 }
 
 ul {
@@ -80,7 +84,9 @@ input {
     height: 3rem;
     margin-bottom: 1em;
 }
-
+.form2 label{
+  font-weight: bold;
+}
 .enviar input{
   color: white;
   font-size: 1em;
@@ -104,4 +110,63 @@ input {
 }
 .reto2:hover {
   background: rgb(30, 88, 128);
+}
+.reto3 {
+  background: rgb(28, 170, 226);
+}
+.reto3:hover {
+  background: rgb(25, 148, 197)
+}
+
+label.radio{
+  font-weight:lighter;
+}
+
+input[type=radio] {
+  width: 10%;
+  margin-bottom: 1em;
+}
+
+select{
+  font-size: 16px;
+  width: 21.5em;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+
+input[type=checkbox] {
+  width: 10%;
+  margin-bottom: 1em;
+  margin-left: 0;
+}
+
+.form3 input {
+  width: 20rem;
+  margin: 0;
+  margin-bottom: 1em;
+  margin-top: 2px;
+  padding: 0.5em 1em;
+  border-style:solid;
+  border-width: 1px;
+  border-color: rgb(205, 206, 207);
+  border-radius: 0.3em;
+}
+.form3 textarea{
+  width: 21.5rem;
+  height: 10rem;
+  margin-bottom: 1em;
+  border-style:solid;
+  border-width: 1px;
+  border-color: rgb(205, 206, 207);
+  border-radius: 0.3em;
+}
+.form3 label{
+  margin-left: 1em;
+  font-size: small;
+}
+.form3 input[type=submit]{
+  border:none;
+  margin: 0 auto;
+  display: block;
+  width: auto;
 }

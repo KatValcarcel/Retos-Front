@@ -19,39 +19,34 @@
         </div>
       </header>
     </div>
-    <div class="content">
-      <div class="tittle">
-        <h1>CREATE YOUR ACCOUNT</h1>
-        <h4>This is step 1</h4>
-      </br>
-      </div>
+    <fieldset class="form3">  
       <div>
         <form action="">
+            <div>
+                <h2>Contact Form</h1>
+              </div>
           <div>
-            <input type="text" name="nombre" placeholder="Nombre*" required />
+            <label>First Name</label></br>
+            <input type="text" name="nombre" placeholder="John" minlength="6" required />
           </div>
           <div>
-            <input type="email" name="correo" placeholder="Correo*" required />
+            <label>Last Name</label></br>
+            <input type="text" name="apellido" minlength="6" placeholder="Doe" required />
           </div>
           <div>
-            <input type="tel" name="phone" id="" placeholder="Teléfono" />
-          </div>
+            <label>Email</label></br>
+            <input type="email" name="correo" placeholder="you@domain.com" required />
+          </div
           <div>
-            <input type="text" name="asunto" placeholder="Asunto*" required />
-          </div>
-          <div>
-            <textarea
-              name="mensaje"
-              id=""
-              cols="40"
-              rows="10"
-              placeholder="Mensaje"
+            <label>Message</label></br>
+            <textarea placeholder="Enter your message here..."
               required
             ></textarea>
           </div>
-          <div class="enviar"><input type="submit" /></div>
+  
+          <div class="enviar"><input class="reto3" type="submit"/></div>
         </form>
       </div>
-    </div>
+    </fielset>
   </body>
 </html>
