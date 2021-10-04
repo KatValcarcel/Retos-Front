@@ -1,0 +1,176 @@
+*{
+    margin:0px;
+    padding:0;
+    box-sizing: border-box;
+    /* guia temporal para saber donde empiezan y terminan los elementos */
+    /* border:1px solid blue; */
+    font-family: 'Urbanist', sans-serif;
+}
+
+header{
+    /* linear gradient (direccion_grados, color1,color2) */
+    background-image: linear-gradient(45deg,#47c7bc,#c71fe6);
+    color:white;
+}
+.container{
+    max-width:900px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+nav ul{
+    display: flex;
+    /* quitar puntitos */
+    list-style-type: none;
+    align-items: center;
+}
+nav li{
+    margin: 0 5px;
+}
+.caracteristicas h2{
+    text-align: center;
+}
+button{
+    background-color: transparent;
+    border: 1px solid white;
+    padding:10px 20px;
+    border-radius:20px;
+    color: white;
+    max-height:40px;
+    /* margin:auto; */
+}
+button:nth-of-type(2){
+    background-color: white;
+    color: black;
+    max-height:40px;
+}
+
+button:hover{
+    background-color: white;
+    color: gray;
+}
+
+.hero{
+    padding:80px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* al h1, div y h5 dentro de la clase hero */
+.hero h1,h5,div{
+    margin:10px
+}
+
+.hero h1{
+    font-size: calc(16px + 5vw);
+    text-align: center;
+}
+
+.hero img{
+    max-width: 75vw;
+}
+
+.caracteristicas{
+    max-width: 1200px;
+    margin:0 auto;
+    padding:50px;
+}
+.tarjetas{
+    display:flex;
+}
+.tarjeta{
+    padding:20px;
+    border-radius: 10px;
+    /* box shadow, desplazamiento en x, en y, difuminado, color */
+    box-shadow: 0 0 20px gray;
+}
+/* todos los elementos dentro de tarjeta */
+.tarjeta *{
+    margin:5px 0;
+}
+.tarjeta img{
+    width: 62px;
+}
+
+.tarjeta a{
+    text-decoration: none;
+}
+/* tarjeta del medio: se puede usar odd, even */
+.tarjeta:nth-of-type(2){
+    background-image: linear-gradient(45deg,#47c7bc,#c71fe6);
+    color:white;
+}
+
+/* menu */
+#check{
+    visibility: hidden;
+    position:absolute;
+    z-index: -99;
+}
+
+.show-menu-btn, .hide-menu-btn{
+    cursor:pointer;
+    font-size:30px;
+    display: none;
+}
+
+.menu{
+    transition-duration: 0.5s;
+}
+
+/* responsive */
+/* media query */
+@media screen and (max-width: 768px){
+    .tarjetas{
+        flex-direction: column;
+    }
+    .tarjeta{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 572px){
+    .menu{
+        /* estatico */
+        position:fixed;
+        top:0;
+        width:100%;
+        height: 100vh;
+        background-color: blueviolet;
+        flex-direction: column;
+        padding: 100px 0;
+        right:-100%;
+    }
+    .menu li{
+        padding:20px 0;
+        font-size: 24px;
+    }
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    .hide-menu-btn, .show-menu-btn{
+        display: block;
+        top:40px;
+        right: 40px;
+    }
+    /* ~ : hace referencia a los elementos despues de check en la estructura */
+    #check:checked ~ .menu{
+        right: 0;
+    }
+    div{
+        text-align: center;
+    }
+    h5{
+        text-align: center;
+    }
+    button:nth-of-type(2){
+        margin-top:5px;
+    }
+}
