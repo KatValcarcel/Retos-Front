@@ -1,3 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/* grid */
+.contenedor {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.caja {
+  padding: 3em;
+}
+.caja:nth-of-type(2) {
+  background-image: url("img/cel.png");
+  background-size: 65%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.caja:nth-of-type(3) {
+  grid-column: 3/5;
+  background-color: #f6f8fa;
+  text-align: center;
+}
+.caja:nth-of-type(3) h3 {
+  font-size: 40px;
+}
+.caja:nth-of-type(3) a {
+  color: #429c99;
+}
+.caja:nth-of-type(4) {
+  background-color: #ee5636;
+  text-align: center;
+}
+.caja:nth-of-type(4) h4 {
+  margin-top: 10px;
+  color: white;
+}
+.caja:nth-of-type(4) a {
+  color: rgb(255, 196, 0);
+}
+.caja:nth-of-type(4) img {
+  max-width: 100%;
+}
+.caja:nth-of-type(5) {
+  background-image: url("img/mac.png");
+  background-size: 105%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.caja:nth-of-type(6) {
+  padding-left: 0;
+  margin-right: 40px;
+}
+.caja:nth-of-type(7) {
+  background-color: #8a78b8;
+  background-image: url("img/disquette.png");
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  grid-column: 4/5;
+  grid-row: 2/4;
+  text-align: center;
+}
+.caja:nth-of-type(7) h2 {
+  color: white;
+  margin-top: 13em;
+}
+.caja:nth-of-type(7) p {
+  color: white;
+}
+.caja:nth-of-type(7) button {
+  border-style: none;
+  background-color: rgb(255, 196, 0);
+  padding: 12px 20px;
+  border-radius: 2em;
+  cursor: pointer;
+}
+.caja:nth-of-type(8) {
+  background-color: #f6f8fa;
+  text-align: center;
+}
+.caja:nth-of-type(8) h4 {
+  margin: 10px 0 30px;
+}
+.caja:nth-of-type(8) img {
+  max-width: 100%;
+}
+.caja:nth-of-type(9) {
+  grid-column: 2/4;
+  background-color: #9ab6b6;
+  background-image: url("img/ipad.png");
+  background-size: 80%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 15px;
+}
+.caja:nth-of-type(9) h3 {
+  color: white;
+  font-weight: 800;
+}
+.caja:nth-of-type(9) button {
+  display: flex;
+  justify-content: flex-start;
+  border-style: none;
+  color: white;
+  background-color: #ee5636;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* styles */
 .tittle {
   font-family: "Slabo 13px", serif;
+  margin-bottom: 10px;
+}
+h6 {
+  color: gray;
+  margin-bottom: 15px;
+}
+p {
+  color: gray;
+  font-size: small;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+/* img {
+  max-width: 100%;
+} */
+.link {
+  font-family: "Rubik", sans-serif;
+  font-weight: bolder;
+  color: #429c99;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+@media (max-width: 786px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+    max-width: fit-content;
+  }
+.caja:nth-of-type(1){
+    padding-bottom: 0;
+}
+  .caja:nth-of-type(2){
+    grid-column: 1/2;
+    height: 35vh;
+    background-size: 50%;
+  }
+  .caja:nth-of-type(3){
+    grid-column: 1/2;
+  }
+  .caja:nth-of-type(4){
+    grid-column: 1/2;
+  }
+  .caja:nth-of-type(5){
+    grid-column: 1/2;
+    background-image: none;
+    padding-bottom: 0;
+  }
+  .caja:nth-of-type(6){
+      background-image: url("img/mac.png");
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 110%;
+      height: 45vh;
+    grid-column: 1/2;
+    padding: 0 3em 3em;
+    text-align: center;
+  }
+  .caja:nth-of-type(7){
+      padding-top: 10em;
+    grid-column: 1/2;
+    grid-row: 7/8;
+  }
+.caja:nth-of-type(7) h2{
+    font-size: 2em;
+}
+.caja:nth-of-type(7) p{
+    margin: 3em 0;
+}
+  .caja:nth-of-type(8){
+    grid-column: 1/2;
+  }
+  .caja:nth-of-type(9){
+    grid-column: 1/2;
+    height: 40vh;
+    background-size: 100%;
+  }
+  .caja:nth-of-type(9) h3{
+      margin-top: 0.7em;
+  }
+  .tittle{
+      font-size: 2rem;
+  }
+  p, h6 {
+      font-size: 1rem;
+  }
+  .link{
+      font-size: 1em;
+  }
 }
