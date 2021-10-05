@@ -67,6 +67,7 @@ header {
   display: grid;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 .caja:nth-of-type(1) {
   background-image: url("/img/1.png");
@@ -112,4 +113,20 @@ header {
 }
 .grid-container img {
   size: 400px;
+}
+.caja .overlay{
+  display: none;
+  position: absolute;
+}
+.caja:hover .overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.overlay button{
+  border-style: solid;
+  border-color: white;
+  color: white;
+  background-color: rgb(206, 61, 4);
+  padding: 4px 12px;
 }
