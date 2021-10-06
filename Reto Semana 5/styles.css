@@ -1,0 +1,32 @@
+body {
+  font-family: arial, sans;
+}
+/* header */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(3, 79, 141);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.active {
+  background-color: rgb(233, 172, 18);
+}
+
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(2, 61, 109);
+}
