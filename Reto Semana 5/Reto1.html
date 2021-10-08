@@ -18,52 +18,81 @@
         día
       </h1> -->
     <!--Nav markup goes here-->
-      <header>
-        <div class="container">
-          <nav>
-            <div class="menu-icons">
-              <i class="material-icons md-18 icon-menu">menu</i>
-              <i class="material-icons md-18 icon-close">close</i>
-            </div>
-            <a href="#" class="logo">
-              <i class="icon material-icons"> attach_money </i>
-            </a>
-            <ul class="nav-list">
-              <li>
-                <a class="no-material" href="/index.html">Retos</a>
-              </li>
-              <li>
-                <a href="#">Semana
-                  <i class="material-icons md-18">arrow_drop_down</i>
-                </a>
-                <ul class="sub-menu">
-                  <li><a href="#">Reto 1</a></li>
-                  <li><a href="Reto2.html">Reto 2</a></li>
-                  <li><a href="Reto3.html">Reto 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="menu-icons">
+            <i class="material-icons md-18 icon-menu">menu</i>
+            <i class="material-icons md-18 icon-close">close</i>
+          </div>
+          <a href="#" class="logo">
+            <i class="icon material-icons"> attach_money </i>
+          </a>
+          <ul class="nav-list">
+            <li>
+              <a class="no-material" href="/index.html">Retos</a>
+            </li>
+            <li>
+              <a href="#"
+                >Semana
+                <i class="material-icons md-18">arrow_drop_down</i>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="#">Reto 1</a></li>
+                <li><a href="Reto2.html">Reto 2</a></li>
+                <li><a href="Reto3.html">Reto 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <!--End nav-->
 
     <!--Hero-->
-    <section class="hero">
+    <section class="hero1">
       <div class="text">
         <h2>RETO 1</h2>
-        <h1>Registro de producción</h1>
-        <p>Un productor de leche lleva el registro de lo
-          que produce en litros, pero cuando entrega le
-          pagan en galones. Realice un algoritmo, y
-          represéntelo en JS, que ayude al productor
-          a saber cuánto recibirá por la entrega de su
-          producción de un día (1 galón
-          = 3.785 litros).</p>
-        <a href="#" class="btn">Learn more</a>
+        <h1>Calculadora de Ganancias</h1>
+        <p>
+          Un productor de leche lleva el registro de lo que produce en litros,
+          pero cuando entrega le pagan en galones. Realice un algoritmo, y
+          represéntelo en JS, que ayude al productor a saber cuánto recibirá por
+          la entrega de su producción de un día (1 galón = 3.785 litros).
+        </p>
+        <div class="form-container">
+          <label>Litros producidos</label>
+          <input
+            id="litros"
+            type="number"
+            placeholder="Litros Producidos"
+            required
+          />
+          <label>Total en Galones</label>
+          <input
+            id="galon"
+            type="number"
+            placeholder="Total Galones"
+            disabled
+          />
+          <label>Precio por galón</label>
+          <input
+            id="pGalon"
+            type="number"
+            placeholder="Precio por galón"
+            required
+          />
+          <label>Ganancia Obtenida</label>
+          <input
+            id="ganancia"
+            type="number"
+            placeholder="Ganancia"
+            disabled
+          />
+        </div>
+        <!-- <button onclick="calcular()" class="btn">Calcular</button> -->
       </div>
     </section>
     <script src="Reto1.js"></script>
   </body>
 </html>
-
