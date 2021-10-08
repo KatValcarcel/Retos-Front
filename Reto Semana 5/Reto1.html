@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reto 1</title>
-    <script src="Reto1.js"></script>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-    <div>
-        <header>
-            <div>
-              <ul>
-                <li><a class="active" href="#">Reto 1!</a></li>
-                <li><a href="./Reto2.html">Reto 2!</a></li>
-                <li><a href="./Reto3.html">Reto 3!</a></li>
-              </ul>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <h1>
+        <span class="material-icons md-48 logo">monetization_on</span> Producción del
+        día
+      </h1> -->
+    <!--Nav markup goes here-->
+      <header>
+        <div class="container">
+          <nav>
+            <div class="menu-icons">
+              <i class="material-icons md-18 icon-menu">menu</i>
+              <i class="material-icons md-18 icon-close">close</i>
             </div>
-        </header>
-        <h1>Producción del día</h1>
-        
-    </div>
-</body>
+            <a href="/Reto Semana 5/Reto1.html" class="logo">
+              <i class="icon material-icons"> attach_money </i>
+            </a>
+            <ul class="nav-list">
+              <li>
+                <a class="no-material" href="/index.html">Retos</a>
+              </li>
+              <li>
+                <a href="#">Semana
+                  <i class="material-icons md-18">arrow_drop_down</i>
+                </a>
+                <ul class="sub-menu">
+                  <li><a href="#">Reto 1</a></li>
+                  <li><a href="/Reto Semana 5/Reto2.html">Reto 2</a></li>
+                  <li><a href="/Reto Semana 5/Reto3.html">Reto 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <!--End nav-->
+
+    <!--Hero-->
+    <section class="hero">
+      <div class="text">
+        <h2>RETO 1</h2>
+        <h1>Registro de producción</h1>
+        <p>Un productor de leche lleva el registro de lo
+          que produce en litros, pero cuando entrega le
+          pagan en galones. Realice un algoritmo, y
+          represéntelo en JS, que ayude al productor
+          a saber cuánto recibirá por la entrega de su
+          producción de un día (1 galón
+          = 3.785 litros).</p>
+        <a href="#" class="btn">Learn more</a>
+      </div>
+    </section>
+    <script src="Reto1.js"></script>
+  </body>
 </html>
+
