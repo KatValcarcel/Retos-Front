@@ -61,7 +61,7 @@
           <h1>El náufrago satisfecho</h1>
           <p>
             «El náufrago satisfecho» ofrece hamburguesas sencillas, dobles y
-            triples,las cuales tienen un costo de $20.00, $25.00 y $28.00
+            triples, las cuales tienen un costo de $20.00, $25.00 y $28.00
             respectivamente. La empresa acepta tarjetas de crédito con un cargo
             de 5 % sobre la compra. Suponiendo que los clientes adquieren sólo
             un tipo de hamburguesa, realice un algoritmo para determinar cuánto
@@ -89,7 +89,15 @@
               <button id="3">Añadir</button>
             </div>
           </div>
-          <button>Terminar compra</button>
+          <form class="check" name="pago">
+            <div class="tarjeta">
+              <input type="checkbox" id="tarjeta" name="tarjeta" />
+              <label for="tarjeta"
+                >Pago con tarjeta, se aplicará un cargo de 5%.
+              </label>
+            </div>
+            <button onclick="comprar()">Terminar compra</button>
+          </form>
         </div>
       </div>
     </section>

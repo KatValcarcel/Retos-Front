@@ -183,7 +183,7 @@ label {
   padding: 9%;
 }
 
-.text button{
+.text button {
   font-size: 1.6rem;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -207,29 +207,40 @@ button:hover {
 .hamburguesas {
   display: flex;
   align-items: baseline;
+  justify-content: space-around;
   gap: 20px;
 }
 .burguer img {
   width: 20em;
   margin: auto;
 }
-.burguer h2{
+.burguer h2 {
   color: gray;
   font-weight: bold;
 }
 .burguer {
   padding: 3em;
   border-radius: 10px;
-  background-color:white;
-  
+  background-color: white;
 }
-.compra{
+.compra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h2.price {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+label{
+  margin-left: 10px;
+}
+.check{
   display: flex;
   flex-direction: column;
 }
-h2.price{
-  font-size: 25px;
-  margin-bottom: 5px;
+.tarjeta{
+  margin-bottom: 30px;
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -245,7 +256,7 @@ h2.price{
   .text {
     width: 100%;
     position: absolute;
-    top: 80%;
+    top: 90%;
     grid-template-columns: 1fr;
   }
   .nav-list {
@@ -296,15 +307,13 @@ h2.price{
   nav.active .nav-list {
     display: flex;
   }
-  nav {
-    border-bottom: none;
-  }
+
   .burguer {
     display: flex;
     flex-direction: column;
     padding: 3em;
     border-radius: 10px;
-    background-color:white;
+    background-color: white;
   }
   .burguer img {
     max-width: 60%;
@@ -316,12 +325,15 @@ h2.price{
   }
   body {
     overflow-y: scroll;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("images/hamburger.jpeg") center/contain;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8)
+      ),
+      url("images/hamburger.jpeg") center/contain;
     background-size: cover;
   }
-  .hamburguesas{
+  .hamburguesas {
     margin-bottom: 20px;
   }
-
 }
