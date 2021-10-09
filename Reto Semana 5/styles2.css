@@ -168,7 +168,7 @@ label {
 .text h1 {
   font-size: 8rem;
   margin: 2rem 0;
-  font-family: "Freebooter Script", sans-serif;
+  font-family: "Lobster", cursive;
 }
 
 .text h2 {
@@ -256,7 +256,7 @@ label{
   .text {
     width: 100%;
     position: absolute;
-    top: 90%;
+    top: 100%;
     grid-template-columns: 1fr;
   }
   .nav-list {
