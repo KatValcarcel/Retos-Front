@@ -1,24 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reto 1</title>
-    <script src="Reto1.js"></script>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-    <div>
-        <header>
-            <div>
-              <ul>
-                <li><a href="./Reto1.html">Reto 1!</a></li>
-                <li><a class="active" href="#">Reto 2!</a></li>
-                <li><a href="./Reto3.html">Reto 3!</a></li>
+    <link rel="stylesheet" href="styles2.css" />
+    <!-- Google icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.cdnfonts.com/css/freebooter-script"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <h1>
+        <span class="material-icons md-48 logo">monetization_on</span> Producción del
+        día
+      </h1> -->
+    <!--Nav markup goes here-->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="menu-icons">
+            <i class="material-icons md-18 icon-menu">menu</i>
+            <i class="material-icons md-18 icon-close">close</i>
+          </div>
+          <a href="#" class="logo">
+            <i class="icon material-icons"> lunch_dining </i>
+          </a>
+          <ul class="nav-list">
+            <li>
+              <a class="no-material" href="/index.html">Retos</a>
+            </li>
+            <li>
+              <a href="#"
+                >Semana
+                <i class="material-icons md-18">arrow_drop_down</i>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Reto1.html">Reto 1</a></li>
+                <li><a href="#">Reto 2</a></li>
+                <li><a href="Reto3.html">Reto 3</a></li>
               </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--End nav-->
+
+    <!--Hero-->
+    <section class="hero">
+      <div class="text">
+        <div class="reto">
+          <h2>RETO 2</h2>
+          <h1>El náufrago satisfecho</h1>
+          <p>
+            «El náufrago satisfecho» ofrece hamburguesas sencillas, dobles y
+            triples,las cuales tienen un costo de $20.00, $25.00 y $28.00
+            respectivamente. La empresa acepta tarjetas de crédito con un cargo
+            de 5 % sobre la compra. Suponiendo que los clientes adquieren sólo
+            un tipo de hamburguesa, realice un algoritmo para determinar cuánto
+            debe pagar una persona por N hamburguesas.
+          </p>
+        </div>
+        <div class="compra">
+          <div class="hamburguesas">
+            <div class="burguer">
+              <h2>Hamburguesa Sencilla</h2>
+              <img src="images/sencilla.jpeg" />
+              <h2 class="price">$20</h2>
+              <button id="1">Añadir</button>
             </div>
-        </header>
-    </div>
-</body>
+            <div class="burguer">
+              <h2>Hamburguesa Doble</h2>
+              <img src="images/doble.png" />
+              <h2 class="price">$25</h2>
+              <button id="2">Añadir</button>
+            </div>
+            <div class="burguer">
+              <h2>Hamburguesa Triple</h2>
+              <img src="images/triple.jpeg" />
+              <h2 class="price">$28</h2>
+              <button id="3">Añadir</button>
+            </div>
+          </div>
+          <button>Terminar compra</button>
+        </div>
+      </div>
+    </section>
+    <script src="Reto2.js"></script>
+  </body>
 </html>
