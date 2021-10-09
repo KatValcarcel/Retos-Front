@@ -246,7 +246,7 @@ label{
 /* ----------------------------------------------------------------------------------------- */
 @media screen and (max-width: 830px) {
   .text h1 {
-    font-size: 4rem;
+    font-size: 10vw;
   }
 
   .text .btn {
@@ -255,8 +255,9 @@ label{
 
   .text {
     width: 100%;
-    position: absolute;
-    top: 100%;
+    /* position: absolute; */
+    /* top: 100%; */
+    margin-top: 40rem;
     grid-template-columns: 1fr;
   }
   .nav-list {
