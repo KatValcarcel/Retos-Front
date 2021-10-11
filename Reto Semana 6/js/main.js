@@ -61,3 +61,25 @@ let listaPlatillos = [
  */
 
 //lo ponen el discord
+
+let divContenido = document.getElementById("contenido");
+function crearTarjetas(){
+    let tarjetas="";
+    listaPlatillos.forEach(function(platillo){
+        tarjetas = tarjetas + ` <div class="tarjeta">
+                                    <div class="imagen">
+                                     <img src="${platillo.imagen}" />
+                                    </div>
+                                        <div class="texto">
+                                        <h4>${platillo.nombre}</h4>
+                                        <p>${platillo.descripcion}</p>
+                                        <div class="precio">
+                                            <span>${platillo.precio}</span>
+                                            <button class="btn-agregar">Agregar</button>
+                                        </div>
+                                    </div>
+                                </div>`
+    });
+    divContenido.innerHTML= tarjetas;
+};
+crearTarjetas();
