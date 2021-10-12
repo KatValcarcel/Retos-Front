@@ -84,6 +84,7 @@ function crearTarjetas() {
     divContenido.innerHTML = tarjetas;
 };
 crearTarjetas();
+cargarLocalStorage();
 
 let btnAgregar = document.querySelectorAll(".btn-agregar");
 btnAgregar.forEach(function (boton) {
@@ -120,16 +121,40 @@ function AgregaraCarrito(plato) {
                 items = items +`<tr>
                                 <th>${item.item}</th>
                                 <th id="cantidad">${item.cantidad}</th>
-                                <th>${item.PUnit}</th>
-                                <th id="subtotal">${item.subtotal}</th>
+                                <th>S/. ${item.PUnit}</th>
+                                <th id="subtotal">S/. ${item.subtotal}</th>
                             </tr>
                 `;
             });
             tbody.innerHTML = items;   
             let  resumen = document.getElementById("total");
-            resumen.innerHTML = total;
+            resumen.innerHTML = `S/. ${total}`;
+            guardarLocalStorage(carrito);
     }
     else {
         alert(`${plato.nombre} ya no se encuentra disponible. Por favor, seleccione otro platillo.`);
     }
+};
+function guardarLocalStorage(miObjeto){
+    localStorage.setItem('datos', JSON.stringify(miObjeto));
+};
+function cargarLocalStorage(){
+    var guardado = localStorage.getItem('datos');
+    carrito=JSON.parse(guardado);
+    let total=0;
+    let tbody = document.getElementById("tbody-carrito");
+            let items ="";
+            carrito.forEach(function(item){
+                items = items +`<tr>
+                                <th>${item.item}</th>
+                                <th id="cantidad">${item.cantidad}</th>
+                                <th>S/. ${item.PUnit}</th>
+                                <th id="subtotal">S/. ${item.subtotal}</th>
+                            </tr>
+                `;
+                total+=item.subtotal;
+            });
+            tbody.innerHTML = items;   
+            let  resumen = document.getElementById("total");
+            resumen.innerHTML = `S/. ${total}`;
 };
