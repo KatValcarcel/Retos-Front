@@ -1,0 +1,50 @@
+.container{
+    margin-top: 40px;
+}
+
+.task{
+    font-weight: bold;
+}
+
+.urgency{
+    font-weight: bold;
+}
+
+.priority{
+    color: #fff;
+}
+
+.priority div{
+    border-radius: 10px;
+    width: 80px;
+    padding: 3px 5px;
+    text-align: center;
+}
+
+.MINOR{
+    background-color: #198754 !important;
+}
+.MEDIUM{
+    background-color: #ffc107 !important;  
+}
+.MAJOR{
+    background-color: #dc3545 !important;
+}
+
+.hasTime{
+    color: #198754 !important;
+}
+.tomorrow{
+    color: #ffc107 !important;  
+}
+.today{
+    color: #dc3545 !important;
+}
+
+.time p{
+    margin: auto 10px;
+    padding-top: 15px;
+}
+.align-middle th{
+    color: gray;
+}
