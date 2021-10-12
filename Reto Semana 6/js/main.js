@@ -9,9 +9,9 @@ let listaPlatillos = [
     },
     {
         id: 2,
-        nombre: "Albondigas con salsa Barbeque",
+        nombre: "Albondigas con salsa BBQ",
         descripcion:
-            "Albondigas de carne de res condimentandas con finas hierbas acompañadas con Salsa Bbq y espinacas",
+            "Albondigas de carne de res condimentandas con finas hierbas acompañadas con Salsa BBQ y espinacas",
         precio: 18.0,
         stock: 8,
         imagen: "https://images.unsplash.com/photo-1529042410759-befb1204b468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80",
@@ -63,9 +63,10 @@ let listaPlatillos = [
 //lo ponen el discord
 
 let divContenido = document.getElementById("contenido");
-function crearTarjetas(){
-    let tarjetas="";
-    listaPlatillos.forEach(function(platillo){
+let carrito = [];
+function crearTarjetas() {
+    let tarjetas = "";
+    listaPlatillos.forEach(function (platillo) {
         tarjetas = tarjetas + ` <div class="tarjeta">
                                     <div class="imagen">
                                      <img src="${platillo.imagen}" />
@@ -75,11 +76,57 @@ function crearTarjetas(){
                                         <p>${platillo.descripcion}</p>
                                         <div class="precio">
                                             <span>${platillo.precio}</span>
-                                            <button class="btn-agregar">Agregar</button>
+                                            <button class="btn-agregar" id="${platillo.id}">Agregar</button>
                                         </div>
                                     </div>
                                 </div>`
     });
-    divContenido.innerHTML= tarjetas;
+    divContenido.innerHTML = tarjetas;
 };
 crearTarjetas();
+
+let btnAgregar = document.querySelectorAll(".btn-agregar");
+btnAgregar.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        let id = +boton.getAttribute("id");
+        let platoSelected = listaPlatillos.find(plato => plato.id === id);
+        AgregaraCarrito(platoSelected);
+    });
+});
+
+function AgregaraCarrito(plato) {
+    let cantidad=1;
+    let subtotal = 0;
+    if (plato.stock > 0) {
+        plato.stock -= 1;
+
+        if(carrito.find(x=>x.id===plato.id)){
+            let item = carrito.find(x=>x.id===plato.id);
+            let i = carrito.indexOf(item);
+            cantidad=carrito[i].cantidad;
+            carrito[i].cantidad=cantidad+1;
+            carrito[i].subtotal=carrito[i].cantidad*plato.precio;
+            // console.table(carrito); 
+         }
+        else{
+            subtotal = plato.precio;
+            carrito.push({id:plato.id, item:plato.nombre, cantidad:cantidad, PUnit:plato.precio, subtotal:subtotal});
+        }
+            let tbody = document.getElementById("tbody-carrito");
+            let items ="";
+            carrito.forEach(function(item){
+                items = items +`<tr>
+                                <th>${item.item}</th>
+                                <th id="cantidad">${item.cantidad}</th>
+                                <th>${item.PUnit}</th>
+                                <th id="subtotal">${item.subtotal}</th>
+                            </tr>
+                `;
+            });
+            tbody.innerHTML = items;
+            
+    }
+    else {
+        alert(`${plato.nombre} ya no se encuentra disponible. Por favor, seleccione otro platillo.`);
+    }
+};

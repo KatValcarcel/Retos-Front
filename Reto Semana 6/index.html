@@ -63,12 +63,22 @@
         <!-- table-body -->
         <tbody id="tbody-carrito">
           <!-- items de la boleta -->
+          <!-- <tr>
+            <th>${item}</th>
+            <th id="cantidad">${item.cantidad}</th>
+            <th>${item.precio}</th>
+            <th id="subtotal">${item.cantidad}}</th>
+          </tr> -->
         </tbody>
       </table>
 
       <div class="resumen">
         <table>
           <tbody id="tbody-resumen"></tbody>
+          <tr>
+            <td>TOTAL</td>
+            <td class="total"></td>
+          </tr>
         </table>
         <button id="btn-pagar">PAGAR ORDEN</button>
       </div>
