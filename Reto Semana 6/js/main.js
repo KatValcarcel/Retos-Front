@@ -94,67 +94,84 @@ btnAgregar.forEach(function (boton) {
         AgregaraCarrito(platoSelected);
     });
 });
-let total=0;
+let total = 0;
 function AgregaraCarrito(plato) {
-    let cantidad=1;
+    let cantidad = 1;
     let subtotal = 0;
 
     if (plato.stock > 0) {
         plato.stock -= 1;
 
-        if(carrito.find(x=>x.id===plato.id)){
-            let item = carrito.find(x=>x.id===plato.id);
+        if (carrito.find(x => x.id === plato.id)) {
+            let item = carrito.find(x => x.id === plato.id);
             let i = carrito.indexOf(item);
-            cantidad=carrito[i].cantidad;
-            carrito[i].cantidad=cantidad+1;
-            carrito[i].subtotal=carrito[i].cantidad*plato.precio;
+            cantidad = carrito[i].cantidad;
+            carrito[i].cantidad = cantidad + 1;
+            carrito[i].subtotal = carrito[i].cantidad * plato.precio;
             total += plato.precio;
-         }
-        else{
+        }
+        else {
             subtotal = plato.precio;
-            carrito.push({id:plato.id, item:plato.nombre, cantidad:cantidad, PUnit:plato.precio, subtotal:subtotal});
+            carrito.push({ id: plato.id, item: plato.nombre, cantidad: cantidad, PUnit: plato.precio, subtotal: subtotal });
             total += subtotal;
         }
-            let tbody = document.getElementById("tbody-carrito");
-            let items ="";
-            carrito.forEach(function(item){
-                items = items +`<tr>
+        let tbody = document.getElementById("tbody-carrito");
+        let items = "";
+        carrito.forEach(function (item) {
+            items = items + `<tr>
                                 <th>${item.item}</th>
                                 <th id="cantidad">${item.cantidad}</th>
                                 <th>S/. ${item.PUnit}</th>
                                 <th id="subtotal">S/. ${item.subtotal}</th>
                             </tr>
                 `;
-            });
-            tbody.innerHTML = items;   
-            let  resumen = document.getElementById("total");
-            resumen.innerHTML = `S/. ${total}`;
-            guardarLocalStorage(carrito);
+        });
+        tbody.innerHTML = items;
+        let resumen = document.getElementById("total");
+        resumen.innerHTML = `S/. ${total}`;
+        guardarLocalStorage(carrito);
     }
     else {
         alert(`${plato.nombre} ya no se encuentra disponible. Por favor, seleccione otro platillo.`);
     }
 };
-function guardarLocalStorage(miObjeto){
-    localStorage.setItem('datos', JSON.stringify(miObjeto));
+function guardarLocalStorage(carrito) {
+    localStorage.setItem('datos', JSON.stringify(carrito));
 };
-function cargarLocalStorage(){
+function cargarLocalStorage() {
     var guardado = localStorage.getItem('datos');
-    carrito=JSON.parse(guardado);
-    let total=0;
-    let tbody = document.getElementById("tbody-carrito");
-            let items ="";
-            carrito.forEach(function(item){
-                items = items +`<tr>
+    if (guardado === null) {
+        carrito = [];
+    } else {
+        carrito = JSON.parse(guardado);
+        let total = 0;
+        let tbody = document.getElementById("tbody-carrito");
+        let items = "";
+        carrito.forEach(function (item) {
+            items = items + `<tr>
                                 <th>${item.item}</th>
                                 <th id="cantidad">${item.cantidad}</th>
                                 <th>S/. ${item.PUnit}</th>
                                 <th id="subtotal">S/. ${item.subtotal}</th>
                             </tr>
                 `;
-                total+=item.subtotal;
-            });
-            tbody.innerHTML = items;   
-            let  resumen = document.getElementById("total");
-            resumen.innerHTML = `S/. ${total}`;
+            total += item.subtotal;
+        });
+        tbody.innerHTML = items;
+        let resumen = document.getElementById("total");
+        resumen.innerHTML = `S/. ${total}`;
+    }
 };
+
+let btnPagar = document.getElementById("btn-pagar");
+btnPagar.addEventListener("click", function () {
+    // localStorage.removeItem('datos');
+    if (carrito.length === 0) {
+        alert("No hay nada para comprar");
+    }
+    else {
+        alert("Su compra ha sido efectuada, vuelva pronto :)")
+        localStorage.clear();
+        location.reload();
+    }
+});
