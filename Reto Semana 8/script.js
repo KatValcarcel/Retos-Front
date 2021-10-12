@@ -18,34 +18,38 @@ addTaskButton.addEventListener("click", function () {
     }
     let priority = document.getElementById("prioritySelect").value;
     let urgency = document.getElementById("urgencySelect").value;
-    let lengthHours = document.getElementById("lengthSelectHours").value;
-    let lengthMinutes = document.getElementById("lengthSelectMinutes").value;
-    let lengthBreak = document.getElementById("breakSelect");
+    let hours = document.getElementById("modalHours").value;
+    let minutes = document.getElementById("modalMinutes").value;
+    let SlcBreak = document.getElementById("breakSelect");
 
     let priorityText;
     let urgencyText;
     let urgencyClass;
-    let lengthHoursText;
-    let lengthMinutesText;
-    let lengthBreakText;
+    let hoursText;
+    let hoursClass;
+    let minutesText;
+    let SlcBreakText;
 
-    if (lengthBreak.checked == true) {
-        lengthBreakText = "Break!"
-        lengthHoursText = "";
-        lengthMinutesText = "";
+    if (SlcBreak.checked == true) {
+        SlcBreakText = "Break!"
+        hoursClass="red"
+        hoursText = "";
+        minutesText = "";
     } else {
-        lengthBreakText = "";
-
-        if (lengthHours == 0) {
-            lengthHoursText = "";
-        } else if (lengthHours > 0) {
-            lengthHoursText = lengthHours + " h";
+        SlcBreakText = "";
+        
+        if (hours > 0) {
+            hoursText = hours + " h";
+            hoursClass="yellow"
+        } else {
+            hoursText = "";
+            hoursClass="green"
         }
 
-        if (lengthMinutes == 0) {
-            lengthMinutesText = "";
-        } else if (lengthMinutes > 0) {
-            lengthMinutesText = lengthMinutes + " min";
+        if (minutes > 0) {
+            minutesText = minutes + " min";
+        } else  {
+            minutesText = "";
         }
     };
 
@@ -59,13 +63,13 @@ addTaskButton.addEventListener("click", function () {
 
     if (urgency == 1) {
         urgencyText = "Today"
-        urgencyClass = "today"
+        urgencyClass = "red"
     } else if (urgency == 2) {
         urgencyText = "Tomorrow"
-        urgencyClass = "tomorrow"
+        urgencyClass = "yellow"
     } else if (urgency == 3) {
         urgencyText = "Has time"
-        urgencyClass = "hasTime"
+        urgencyClass = "green"
     }
     i++;
     let tr = document.createElement("tr");
@@ -79,7 +83,7 @@ addTaskButton.addEventListener("click", function () {
                     </td>
                     <td class="priority"><div class="${priorityText}">${priorityText}</div></td>
                     <td><div class="urgency ${urgencyClass}">${urgencyText}</div></td>
-                    <td>${lengthHoursText} ${lengthMinutesText}${lengthBreakText}</td>`;
+                    <td><div class="${hoursClass}">${hoursText} ${minutesText}${SlcBreakText}</div></td>`;
     tbody.appendChild(tr);
     
     modal.hide()

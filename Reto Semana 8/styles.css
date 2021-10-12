@@ -22,23 +22,23 @@
 }
 
 .MINOR{
-    background-color: #198754 !important;
+    background-color: #9ccf36;
 }
 .MEDIUM{
-    background-color: #ffc107 !important;  
+    background-color: #ffc107;  
 }
 .MAJOR{
-    background-color: #dc3545 !important;
+    background-color: #dc3545;
 }
 
-.hasTime{
-    color: #198754 !important;
+.green{
+    color: #9ccf36;
 }
-.tomorrow{
-    color: #ffc107 !important;  
+.yellow{
+    color: #ffc107;  
 }
-.today{
-    color: #dc3545 !important;
+.red{
+    color: #dc3545;
 }
 
 .time p{
