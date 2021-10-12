@@ -9,7 +9,7 @@ let listaPlatillos = [
     },
     {
         id: 2,
-        nombre: "Albondigas con salsa BBQ",
+        nombre: "Albondigas en salsa BBQ",
         descripcion:
             "Albondigas de carne de res condimentandas con finas hierbas acompañadas con Salsa BBQ y espinacas",
         precio: 18.0,
@@ -27,7 +27,7 @@ let listaPlatillos = [
     {
         id: 4,
         nombre: "Pizza de la casa",
-        descripcion: "Pizza con recetea original de la casa",
+        descripcion: "Pizza con receta original de la casa",
         precio: 14.0,
         stock: 7,
         imagen: "https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
@@ -75,7 +75,7 @@ function crearTarjetas() {
                                         <h4>${platillo.nombre}</h4>
                                         <p>${platillo.descripcion}</p>
                                         <div class="precio">
-                                            <span>${platillo.precio}</span>
+                                            <span>S/.${platillo.precio}</span>
                                             <button class="btn-agregar" id="${platillo.id}">Agregar</button>
                                         </div>
                                     </div>
@@ -93,10 +93,11 @@ btnAgregar.forEach(function (boton) {
         AgregaraCarrito(platoSelected);
     });
 });
-
+let total=0;
 function AgregaraCarrito(plato) {
     let cantidad=1;
     let subtotal = 0;
+
     if (plato.stock > 0) {
         plato.stock -= 1;
 
@@ -106,11 +107,12 @@ function AgregaraCarrito(plato) {
             cantidad=carrito[i].cantidad;
             carrito[i].cantidad=cantidad+1;
             carrito[i].subtotal=carrito[i].cantidad*plato.precio;
-            // console.table(carrito); 
+            total += plato.precio;
          }
         else{
             subtotal = plato.precio;
             carrito.push({id:plato.id, item:plato.nombre, cantidad:cantidad, PUnit:plato.precio, subtotal:subtotal});
+            total += subtotal;
         }
             let tbody = document.getElementById("tbody-carrito");
             let items ="";
@@ -123,8 +125,9 @@ function AgregaraCarrito(plato) {
                             </tr>
                 `;
             });
-            tbody.innerHTML = items;
-            
+            tbody.innerHTML = items;   
+            let  resumen = document.getElementById("total");
+            resumen.innerHTML = total;
     }
     else {
         alert(`${plato.nombre} ya no se encuentra disponible. Por favor, seleccione otro platillo.`);
