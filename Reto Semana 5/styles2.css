@@ -323,6 +323,7 @@ label{
   .hamburguesas {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
   }
   body {
     overflow-y: scroll;
@@ -333,8 +334,5 @@ label{
       ),
       url("images/hamburger.jpeg") center/contain;
     background-size: cover;
-  }
-  .hamburguesas {
-    margin-bottom: 20px;
   }
 }
