@@ -1,4 +1,4 @@
-# [Retos] (https://katvalcarcel.github.io/Retos-Front/)
+# [Retos]
 
 - [Semana 1](https://katvalcarcel.github.io/Retos-Front/Reto%20Semana%201/)
 - [Semana 2](https://katvalcarcel.github.io/Retos-Front/Reto%20Semana%202/Reto1.html)
